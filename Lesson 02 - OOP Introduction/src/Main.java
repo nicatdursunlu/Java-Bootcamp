@@ -26,12 +26,15 @@ public class Main {
         System.out.println("-----------------------------------------------------");
 
         Category category1 = new Category();
-        category1.id = 1;
-        category1.name = "Laptop";
+        category1.setId(1);
+        category1.setName("Drink");
 
         Category category2 = new Category();
-        category2.id = 2;
-        category2.name = "Home/Office";
+        category2.setId(2);
+        category2.setName("Food");
+
+        System.out.println(category1.getName());
+        System.out.println("-----------------------------------------------------");
 
         ProductManager productManager = new ProductManager();
         productManager.addToCart(product1);
