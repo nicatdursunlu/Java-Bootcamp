@@ -60,5 +60,7 @@ public class Main {
         numbers1 = numbers2;
         numbers2[0] = 100;
         System.out.println(numbers1[0]);
+
+        System.out.println("Hello OOP! ");
     }
 }
