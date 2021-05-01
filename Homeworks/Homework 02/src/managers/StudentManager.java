@@ -7,9 +7,10 @@ public class StudentManager extends UserManager{
         System.out.println("------------------------------------------------");
     }
 
-    // supheli
-    public void addCourses(String courses) {
-        System.out.println("Your courses " + courses + " added");
-        System.out.println("------------------------------------------------");
+    public void addCourses(String[] courses) {
+        for (String course: courses) {
+            System.out.println("Your course " + course + " added");
+            System.out.println("------------------------------------------------");
+        }
     }
 }
