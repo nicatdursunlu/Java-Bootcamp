@@ -5,21 +5,21 @@ import entities.concretes.Product;
 
 import java.util.List;
 
-public class HibernateProductDao implements ProductDao {
+public class AbcProductDao implements ProductDao {
 
     @Override
     public void add(Product product) {
-        System.out.println("Added with hibernate " + product.getName());
+        System.out.println("Added with abc " + product.getName());
     }
 
     @Override
     public void update(Product product) {
-        System.out.println("Updated with hibernate " + product.getName());
+
     }
 
     @Override
     public void delete(Product product) {
-        System.out.println("Deleted with hibernate " + product.getName());
+
     }
 
     @Override
@@ -31,5 +31,4 @@ public class HibernateProductDao implements ProductDao {
     public List<Product> getAll() {
         return null;
     }
-
 }
