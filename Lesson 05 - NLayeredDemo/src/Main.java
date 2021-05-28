@@ -1,8 +1,8 @@
 import business.abstracts.ProductService;
 import business.concretes.ProductManager;
 import dataAccess.concretes.AbcProductDao;
-import dataAccess.concretes.HibernateProductDao;
 import entities.concretes.Product;
+
 
 public class Main {
 
