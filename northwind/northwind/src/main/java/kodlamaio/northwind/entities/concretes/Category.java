@@ -8,8 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="categories")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"})
 public class Category {
 	
 	@Id
@@ -19,7 +22,7 @@ public class Category {
 	@Column(name="category_name")
 	private String categoryName;
 	
-	@OneToMany(mappedBy = "categories")
+	@OneToMany(mappedBy = "category")
 	private List<Product> products;
 	
 	public Category() {}
