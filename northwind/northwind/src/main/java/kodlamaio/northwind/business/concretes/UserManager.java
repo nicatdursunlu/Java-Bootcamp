@@ -1,5 +1,7 @@
 package kodlamaio.northwind.business.concretes;
 
+import org.springframework.stereotype.Service;
+
 import kodlamaio.northwind.business.abstracts.UserService;
 import kodlamaio.northwind.core.dataAccess.UserDao;
 import kodlamaio.northwind.core.entities.User;
@@ -7,8 +9,8 @@ import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.Result;
 import kodlamaio.northwind.core.utilities.results.SuccessDataResult;
 import kodlamaio.northwind.core.utilities.results.SuccessResult;
-import kodlamaio.northwind.entities.concretes.Product;
 
+@Service
 public class UserManager implements UserService {
 	
 	private UserDao userDao;
