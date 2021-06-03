@@ -7,5 +7,4 @@ import kodlamaio.northwind.core.entities.User;
 public interface UserDao extends JpaRepository<User, Integer> {
 	
 	User findByEmail(String email);
-	
 }

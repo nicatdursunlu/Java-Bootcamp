@@ -1,5 +1,7 @@
 package kodlamaio.northwind.business.concretes;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import kodlamaio.northwind.business.abstracts.UserService;
@@ -21,9 +23,9 @@ public class UserManager implements UserService {
 	}
 
 	@Override
-	public Result add(User user) {
-		this.userDao.save(user);
-		return new SuccessResult("User added");
+	public DataResult<List<User>> getAll() {
+		return new SuccessDataResult<List<User>>
+		(this.userDao.findAll(), "Data is listed");
 	}
 
 	@Override
@@ -31,6 +33,11 @@ public class UserManager implements UserService {
 		return new SuccessDataResult<User>(this.userDao.findByEmail(email), 
 				"User is found");
 	}
-	
+
+	@Override
+	public Result add(User user) {
+		this.userDao.save(user);
+		return new SuccessResult("User added");
+	}
 	
 }
