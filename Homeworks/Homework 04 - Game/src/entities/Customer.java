@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Customer {
 	private int id;
+	private String email;
 	private String firstName;
 	private String lastName;
 	private LocalDate dateOfBirth;
@@ -11,9 +12,10 @@ public class Customer {
 	
 	public Customer() {}
 	
-	public Customer(int id, String firstName, String lastName, LocalDate dateOfBirth, String nationalityId) {
-		super();
+	public Customer(int id, String email, String firstName, String lastName, LocalDate dateOfBirth,
+			String nationalityId) {
 		this.id = id;
+		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.dateOfBirth = dateOfBirth;
@@ -26,6 +28,14 @@ public class Customer {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getFirstName() {
