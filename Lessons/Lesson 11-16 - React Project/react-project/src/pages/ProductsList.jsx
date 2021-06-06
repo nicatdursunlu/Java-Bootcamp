@@ -17,13 +17,14 @@ export const ProductsList = () => {
       .catch((err) => {
         console.log("err ", err);
       });
-  });
+  }, []);
 
   return (
     <div>
       <Table celled>
         <Table.Header>
           <Table.Row>
+            <Table.HeaderCell>ID</Table.HeaderCell>
             <Table.HeaderCell>Product Name</Table.HeaderCell>
             <Table.HeaderCell>Price</Table.HeaderCell>
             <Table.HeaderCell>Units in Stock</Table.HeaderCell>
@@ -35,11 +36,12 @@ export const ProductsList = () => {
         <Table.Body>
           {products.map((product) => (
             <Table.Row key={product.id}>
+              <Table.Cell>{product.id}</Table.Cell>
               <Table.Cell>{product.productName}</Table.Cell>
               <Table.Cell>{product.unitPrice}</Table.Cell>
               <Table.Cell>{product.unitsInStock}</Table.Cell>
               <Table.Cell>{product.quantityPerUnit}</Table.Cell>
-              {/* <Table.Cell>{product.category.categoryName}</Table.Cell> */}
+              <Table.Cell>{product.category.categoryName}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

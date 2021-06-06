@@ -1,5 +1,9 @@
 package kodlamaio.northwind.entities.concretes;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +15,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="products")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,62 +42,4 @@ public class Product {
 	@ManyToOne()
 	@JoinColumn(name="category_id")
 	private Category category;
-	
-	public Product() {}
-
-	public Product(int id, String productName, double unitPrice, short unitsInStock,
-			String quantityPerUnit) {
-		super();
-		this.id = id;
-//		this.categoryId = categoryId;
-		this.productName = productName;
-		this.unitPrice = unitPrice;
-		this.unitsInStock = unitsInStock;
-		this.quantityPerUnit = quantityPerUnit;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-//	public int getCategoryId() {
-//		return categoryId;
-//	}
-//
-//	public void setCategoryId(int categoryId) {
-//		this.categoryId = categoryId;
-//	}
-
-	public String getProductName() {
-		return productName;
-	}
-
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-
-	public double getUnitPrice() {
-		return unitPrice;
-	}
-
-	public void setUnitPrice(double unitPrice) {
-		this.unitPrice = unitPrice;
-	}
-
-	public short getUnitsInStock() {
-		return unitsInStock;
-	}
-
-	public void setUnitsInStock(short unitsInStock) {
-		this.unitsInStock = unitsInStock;
-	}
-
-	public String getQuantityPerUnit() {
-		return quantityPerUnit;
-	}
-	
 }

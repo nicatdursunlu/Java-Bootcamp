@@ -1,5 +1,9 @@
 package kodlamaio.northwind.core.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +16,9 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="users")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 	
 	@Id
@@ -29,38 +36,4 @@ public class User {
 	@NotBlank
 	@NotNull
 	private String password;
-	
-	public User() {}
-	
-	public User(int id, String email, String password) {
-		super();
-		this.id = id;
-		this.email = email;
-		this.password = password;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
 }
